@@ -1,0 +1,414 @@
+{% extends 'base.html' %}
+{% block title %} Home{% endblock %}
+{% block content %}
+        
+
+
+<!-- Banner Section Start -->
+<section class="banner">
+    <div class="container">
+        <div class="row justify-content-center">
+    {% for a in data %}        
+            <div class="col-md-12 col-xl-7">
+                <div class="banner-content text-center">
+                    <span class="subheading" >Expert instruction</span>
+                    <h1><span class="font-weight-normal" >{{a.name }}</span></h1>
+                    <p>{{ a.description }}</p>
+                    <a href="{{ url_for('subject_list') }}" class="btn btn-main mr-2" >Our Courses </a>  
+                    <a href="#" class="btn btn-tp" >Sign up </a>  
+                </div>
+            </div>
+
+    {% endfor %}
+
+
+        </div> <!-- / .row -->
+    </div> <!-- / .container -->
+</section>
+<!-- Banner Section end -->
+
+<!-- Feature section start -->
+<section class="feature section-padding pb-0">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7">
+                <div class="section-heading center-heading">
+                    <span class="subheading">Maximize your potentials</span>
+                    <h3>Learn the secrets to Life Success</h3>
+                    <p>The ultimate planning solution for
+                        busy women who want to reach their personal goals</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-lg-3 col-md-6 col-xl-3" >
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="flaticon-flag"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Experienced Tutors</h4>
+                        <p>Provide Quality and Tutors that will equip you with knoledge</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-6 col-xl-3">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="flaticon-layers"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Self Centered Learning</h4>
+                        <p>Learn and Understand at your own pace.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-lg-3 col-md-6 col-xl-3">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="flaticon-video-camera"></i>
+                    </div>
+
+                    <div class="feature-text">
+                        <h4>Remote Learning</h4>
+                        <p>Learn and Access  Courses from anywhere</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-xl-3">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="flaticon-help"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Academic Excellence</h4>
+                        <p>Track academic tests through tests and quizzes  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Feature section End -->
+<!-- About Section Start -->
+<!-- About Section Start -->
+<section style="margin-top: 80px; background: #8b8cde;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                
+
+                <video width="700" height="400" controls style="margin-top: 40px;">
+                  <source src="{{ url_for('static', filename='assets/images/physics.mp4') }}" type="video/mp4">
+                  <source src="{{ url_for('static', filename='assets/images/physics.mp4') }}" type="video/ogg">
+                 
+                </video>
+
+
+                
+            </div>
+            <div class="col-lg-6">
+                <div class="section-heading mt-4 mt-lg-0 " style="margin-left: 180px;">
+                    <span class="subheading" style="color: black; margin-top: 80px;">Remote Learning</span>
+                    <h3>Get Instant Access To <span> Our Tutorials</span></h3>
+                    <p>We upload tutorials for every course students to easily understand at their own convienience.</p>
+                    
+                </div>
+                <ul class="about-features" style="margin-left: 180px;">
+                    <li>
+                        <i class="fa fa-check"></i>
+                        <h5>High Quality Video Tutorials</h5>
+                    </li>
+                    <li>
+                        <i class="fa fa-check"></i>
+                        <h5>Downloadable Videos</h5>
+                    </li>
+                    <li>
+                        <i class="fa fa-check"></i>
+                        <h5>Premium Content Provided </h5>
+                    </li>
+                </ul>
+
+                <a href="#" class="btn btn-main" style="margin-top: 30px; margin-left: 200px; margin-bottom: 30px;">More Tutorials</a>
+            </div>
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+<!-- About Section END -->
+<!-- About Section END -->
+<section class="section-padding popular-course bg-grey">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7">
+                <div class="section-heading center-heading">
+                    <span class="subheading">Trending Sbjects</span>
+                    <h2>Popular Online Subjects Around You</h2>
+                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+     {% for a in topics %}  
+            <div class="col-lg-4 col-md-6">
+                <div class="course-block">
+                    <div class="course-img">
+                        <img src="{{a.img}}" alt="" class="img-fluid">
+                    </div>
+                   <div class="course-content">
+                        <span class="course-cat">{{a.subjects }}</span>
+                        <h4><a href="#">{{a.body }}</a></h4>   
+                        <div class="course-meta">
+                            <span class="course-student"><i class="fa fa-user-alt"></i> 20 Students</span>
+                            <span class="course-duration"><i class="far fa-file-alt"></i>30 Lessons</span>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+    {% endfor %}
+
+           
+
+    </div>
+</section>
+<!-- COunter Section start -->
+<section class="counter-section section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10">
+                <div class="section-heading">
+                    <span class="subheading">Maximize your potentials</span>
+                    <h3>We break down barriers so students can focus on Learning and understanding the Courses they love and  we offer career guidance for our students.</h3>
+                </div>
+            </div>
+        </div>
+       
+        <div class="row" >
+            <div class="col-lg-3 col-md-6">
+                <div class="counter-item">
+                    <h6>Instructors</h6>
+                    <div class="count">
+                        <span class="counter">20</span>
+                    </div>
+                    <p>The Tutors are available and offer a wide range of content for the students</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="counter-item">
+                    <h6>Total courses</h6>
+                    <div class="count">
+                        <span class="counter">15</span>
+                    </div>
+                    <p>We offer both Ordinary and Advanced courses that are offered in the Ugandan Curriculum</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">         
+                <div class="counter-item">
+                    <h6>Registered students</h6>
+                    <div class="count">
+                        <span class="counter">58</span>
+                    </div>
+                    <p>Stuents Enrolled at Brigher education have a great experience in learning the courses they like </p>
+                </div>
+            </div>
+        
+            <div class="col-lg-3 col-md-6">
+                <div class="counter-item">
+                    <h6>Satisfaction rate</h6>           
+                    <div class="count">
+                        <span class="counter">80</span>%
+                    </div>
+                    <p>Student enrolled at brighter Education have had a Great experience in undertaking the courses offered</p>
+                </div>
+            </div>
+       </div>
+    </div>
+</section>
+<!-- COunter Section END -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12">
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- About Section Start -->
+<section class="about-section section-padding">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-xl-6 col-lg-6">
+                <div class="section-heading ">
+                    <span class="subheading">How to Get Access To Us:</span>
+                    <h4>Get Instant Access To <span> Expert Solution</span></h4>
+                    <p>The ultimate planning solution for busy women who want to reach their personal goals.Effortless comfortable eye-catching unique detail </p>
+                </div>
+
+                <div class="about-text-block">
+                    <div class="icon-box">
+                        <i class="flaticon-video-camera"></i>
+                    </div>
+                    <div class="about-desc">
+                        <h4>Sign up in website</h4>
+                        <p>The right mentoring relationship can be a powerful tool for professional growth. Bark up the right tree.</p>
+                    </div>
+                </div>
+
+                <div class="about-text-block">
+                    <div class="icon-box">
+                        <i class="flaticon-flag"></i>
+                    </div>
+                    <div class="about-desc">
+                        <h4>Enroll your Subjects</h4>
+                        <p>The right mentoring relationship can be a powerful tool for professional growth. Bark up the right tree.</p>
+                    </div>
+                </div>
+                <div class="about-text-block">
+                    <div class="icon-box border-none">
+                        <i class="flaticon-video-camera"></i>
+                    </div>
+                    <div class="about-desc">
+                        <h4>Start from Now</h4>
+                        <p>The right mentoring relationship can be a powerful tool for professional growth. Bark up the right tree.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6">
+                <div class="about-img">
+                    <img src="{{ url_for('static', filename='assets/images/bg/about-image.jpg') }}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section End -->
+<!-- Testimonial section start -->
+<section class="testimonial section-padding">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7">
+                <div class="section-heading center-heading">
+                    <span class="subheading">Testimonials</span>
+                    <h3>Success Stories from person</h3>
+                    <p>The ultimate planning solution for
+                        busy women who want to reach their personal goals</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+                   
+                        <div class="testimonial-info-desc">
+                            They're thinking about what it means to live in a house, rather than just buying a commodity and making it work.(headteacher)lomer simion
+                        </div>
+                    </div>
+
+
+                        </div>
+                       
+                        <div class="testimonial-info-desc">
+                            People who build their own home tend to be very courageous. These people are curious about life.
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonial section End -->
+<!-- Blog Section Start -->
+<section class="blog-section section-padding">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-7">
+                <div class="section-heading center-heading">
+                    <span class="subheading">Blog News</span>
+                    <h3>Latest From The Blog</h3>
+                    <p>The ultimate planning solution for
+                        busy women who want to reach their personal goals</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">               
+            <div class="col-lg-4 col-xl-4 col-md-6 ">
+                <article class="blog-post-item">
+                    <div class="post-thumb">
+                        <img src="{{ url_for('static', filename='assets/images/blog/blog1.jpg') }}" alt="" class="img-fluid">
+                    </div>
+                    <div class="post-item mt-4">
+                        <div class="post-meta">
+                            <span class="post-author">Written by <a href="#" >Admin</a></span>
+                            <span class="post-date"><i class="fa fa-calendar-alt mr-2"></i>May 9, 2020</span>
+                        </div>
+                        <h4 class="post-title"><a href="blog-single.html">How to become a best sale marketer in a month!</a></h4>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-xl-4 col-md-6">
+                <article class="blog-post-item">
+                    <div class="post-thumb">
+                        <img src="{{ url_for('static', filename='assets/images/blog/blog2.jpg') }}" alt="" class="img-fluid">
+                    </div>
+                    <div class="post-item mt-4">
+                        <div class="post-meta">
+                            <span class="post-author">Written by <a href="#" >Admin</a></span>
+                            <span class="post-date"><i class="fa fa-calendar-alt mr-2"></i>May 9, 2020</span>
+                        </div>
+                        <h4 class="post-title"><a href="blog-single.html">How to become a best sale marketer in a month!</a></h4>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-lg-4 col-xl-4 col-md-6">
+                <article class="blog-post-item">
+                    <div class="post-thumb">
+                        <img src="{{ url_for('static', filename='assets/images/blog/blog3.jpg') }}" alt="" class="img-fluid">
+                    </div>
+                    <div class="post-item mt-4">
+                        <div class="post-meta">
+                            <span class="post-author">Written by <a href="#" >Admin</a></span>
+                            <span class="post-date"><i class="fa fa-calendar-alt mr-2"></i>May 9, 2020</span>
+                        </div>
+                        <h4 class="post-title"><a href="blog-single.html">How to become a best sale marketer in a month!</a></h4>
+                        
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Section End -->
+<section class="subscribe section-padding pt-0">
+    <div class="container">
+        <div class="row align-items-center form-inner">
+            <div class="col-lg-6 col-xl-6">
+                <div class="section-heading mb-0">
+                    <span class="subheading">Newsletter</span>
+                    <h3>Subscribe to get latest news</h3>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xl-6">
+                <form action="#" class="subscribe-form">
+                    <input type="text" placeholder="Enter Your Email" class="form-control">
+                    <a href="#" class="btn btn-main">Subscribe</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

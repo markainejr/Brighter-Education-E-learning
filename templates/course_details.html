@@ -1,0 +1,425 @@
+{% extends 'base.html' %}
+{% block title %} Course Details {% endblock %}
+{% block content %}
+
+
+<section class="page-header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-8">
+        <div class="title-block">
+          <h1> Mastering Biology</h1>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a href="#">Home</a>
+            </li>
+             <li class="list-inline-item">/</li>
+            <li class="list-inline-item">
+                Mastering Biology
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-wrapper edutim-course-single edutim-course-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="course-thumbnail">
+                    <img src="{{ url_for('static', filename='assets/images/course/course-lg.jpg') }}" alt="" class="img-fluid w-100">
+                </div>
+
+                <nav class="course-single-tabs learn-press-nav-tabs">
+                    <div class="nav nav-tabs  course-nav" id="nav-tab" role="tablist">
+                      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Overview</a>
+                      <a class="nav-item nav-link" id="nav-topics-tab" data-toggle="tab" href="#nav-topics" role="tab" aria-controls="nav-profile" aria-selected="false">Curriculum</a>
+                      <a class="nav-item nav-link" id="nav-instructor-tab" data-toggle="tab" href="#nav-instructor" role="tab" aria-controls="nav-contact" aria-selected="false">Instructor</a>
+                      <a class="nav-item nav-link" id="nav-feedback-tab" data-toggle="tab" href="#nav-feedback" role="tab" aria-controls="nav-contact" aria-selected="false">Reviews</a>
+                    </div>
+                </nav>
+                  <div class="tab-content edutim-course-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="single-course-details ">
+    <h4 class="course-title">Overview</h4>
+    <p>Biology is a great course to understake as a student because it allows a student to learn and understand the different living organisms in the world.This allows students the different plant and animal spieces in the world.This covers a wide variety of topics such as plant life, the Digestive Systm, Circulatory system and respiratory in all Living Organisms.</p>
+
+
+    <div class="course-widget course-info">
+        <h4 class="course-title">What You will Learn?</h4>
+        <ul>
+            <li>
+                <i class="fa fa-check"></i>
+                Definition of Biology and the different Organsims in the Environment
+            </li>
+            <li>
+                <i class="fa fa-check"></i>
+                Plant Organisms in the Environment and their adaptation in the environment
+            </li>
+            <li>
+                <i class="fa fa-check"></i>
+                Definition of a Cell, Parts of a cell and the Different cells in the environment
+            </li>
+            <li>
+                <i class="fa fa-check"></i>
+                We Learn the different Animal Kingdoms in the Environment.This is where we learn about mammals, reptiles,fish  and many others. 
+            </li>
+            <li>
+                <i class="fa fa-check"></i>
+                We learn about Reptiles and their adaptation in the environment
+            </li>
+            <li>
+                <i class="fa fa-check"></i>
+                We Learn about the different mammals and their adaptation to the environment.
+            </li>
+        </ul>
+    </div>
+</div>
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-topics" role="tabpanel" aria-labelledby="nav-topics-tab">
+                        <div class="edutim-course-curriculum " >
+  <div class="curriculum-scrollable">
+      <ul class="curriculum-sections">
+          <li class="section">
+              <div class="section-header">
+                <div class="section-left">
+                      <h5 class="section-title">Section 1</h5>
+                      <p class="section-desc">Here we teach about the classifications of animals and the different botanical names of difernt Organsims. We dive deep into learning about Plants </p>
+                </div>
+              </div>
+
+            <ul class="section-content">
+                <li class="course-item has-status course-item-lp_lesson">
+                    <a class="section-item-link" href="#">
+                      <span class="item-name">Lesson 1</span>
+                      <div class="course-item-meta">
+                        <span class="item-meta duration">2 Hrs</span>
+                        <i class="item-meta course-item-status"></i>
+                      </div>
+                    </a>
+                </li>
+                <li class="course-item has-status course-item-lp_lesson">
+									<a class="section-item-link" href="#">
+                      <span class="item-name">Lesson 2</span>
+                      <div class="course-item-meta">
+                        <span class="item-meta duration">2 Hrs</span>
+                        <i class="item-meta course-item-status" ></i>
+                      </div>
+					        </a>
+					
+                </li>
+                <li class="course-item course-item-lp_quiz course-item-lp_lesson">
+									<a class="section-item-link" href="#">
+                    <span class="item-name">Quiz 1</span>
+                    <div class="course-item-meta">
+
+                      <span class="item-meta count-questions">14 questions</span>
+                      <span class="item-meta duration">20 min</span><i class="fa item-meta course-item-status trans"></i>
+                    </div>
+					        </a>
+		          	</li>
+            </ul>
+          </li>
+
+          <li class="section">
+            <div class="section-header">
+              <div class="section-left">
+                    <h5 class="section-title">Section 2</h5>
+                    <p class="section-desc">Here we learn about the different animals in the environmnt such as Humans, Amphibians,Reptiles, Fish and their adaptation in the environment</p>
+              </div>
+            </div>
+
+            <ul class="section-content">
+              <li class="course-item has-status course-item-lp_lesson">
+                    <a class="section-item-link" href="#">
+                      <span class="item-name">Lesson 1</span>
+                      <div class="course-item-meta">
+                        <span class="item-meta duration">1 hr</span>
+                        <i class="item-meta course-item-status"></i>
+                      </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+      </ul>
+   </div>
+</div>
+                    </div>
+                    <div class="tab-pane fade" id="nav-instructor" role="tabpanel" aria-labelledby="nav-instructor-tab">
+                        <!-- Course instructor start -->
+<div class="courses-instructor">
+    <div class="single-instructor-box">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-4">
+                <div class="instructor-image">
+                    <img src="{{ url_for('static', filename='assets/images/blog/author.jpg') }}" alt="" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-8">
+                <div class="instructor-content">
+                    <h4><a href="#">Sebiranda David</a></h4>
+                    <span class="sub-title"><p>Biology Tutor</p></span>
+                    
+					<p>David is a very experienced Biology teacher with over 20 years of experience of teaching chemistry in Uganda</p>
+					
+					<ul class="user-social-links">
+                        <li><a href="#"> <i class="fab fa-facebook"></i></a></li>
+
+                        <li><a href="#"> <i class="fab fa-twitter"></i></a></li>
+
+                        <li><a href="#"> <i class="fab fa-linkedin"></i></a></li>
+
+                        <li><a href="#"> <i class="fab fa-youtube"></i></a></li>
+					</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Conurse  instructor end -->
+                    </div>
+                    <div class="tab-pane fade" id="nav-feedback" role="tabpanel" aria-labelledby="nav-feedback-tab">
+                        <div id="course-reviews">
+    <h3 class="course-review-head">Reviews</h3>
+    <ul class="course-reviews-list">
+        <li>
+            <div class="course-review">
+                <div class="course-single-review">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="user-image">
+                                <img src="{{ url_for('static', filename='assets/images/blog/author.jpg') }}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9 col-md-9">
+                            <div class="user-content user-review-content">
+                                <h4 class="user-name">David masaba</h4>
+                                <div class="rating review-stars-rated">
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star-half"></i></a>
+                                </div>
+                                <p class="review-title">Cover all topics  </p>
+                                <div class="review-text">
+                                    <div class="review-content">
+                                    The course teaches about living organism in the environment.It teaches about Plant Cells, Animal cells and Miscroscopic Organsims.It also dives deep into the Different sysytems in our bodies such as the Digestive system, Circulatory System and Execretive Sytstem.This will allo student to pick the right career choice.                                                  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>	
+        <li>
+            <div class="course-review">
+                <div class="course-single-review">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="user-image">
+                                <img src="{{ url_for('static', filename='assets/images/blog/author.jpg') }}" alt="" class="img-fluid">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9 col-md-9">
+                            <div class="user-content user-review-content">
+                                <h4 class="user-name"> Rukundo Joshua</h4>
+                                <div class="rating review-stars-rated">
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star-half"></i></a>
+                                </div>
+                                <p class="review-title">Cover all topics  </p>
+                                
+                                <div class="review-text">
+                                    <div class="review-content">
+                                  The course also teaches us how to look after the environment.This include waterbodies, animals and plants.It also teaches us to maintain personal hygiene and sanitation in the environment.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>			
+    </ul>
+</div>
+                    </div>
+                  </div>
+                
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Course Sidebar start -->
+<div class="course-sidebar">
+    <div class="course-widget course-details-info">
+        <ul>
+            <li>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span><i class="fa fa-money-bill"></i>Price :</span>
+                    <a href="#" class="d-inline-block">
+                        <h4 class="course-price"> <span class="price">Ush.200,000</span></h4>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span><i class="far fa-user"></i>Instructor :</span>
+                    <a href="#" class="d-inline-block"></a><a href="#">David Sebiranda</a>
+                </div>
+            </li>
+
+             <li>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span><i class="far fa-file-alt"></i>Lectures :</span>
+                    2
+                </div>
+            </li>
+             <li>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span><i class="fa fa-user"></i>Enrolled :</span>
+                    <a href="#" class="d-inline-block">15</a>
+                </div>
+            <li>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span><i class="fa fa-clock"></i>Duration :</span>
+                    10 week
+                </div>
+            </li>
+
+            <li>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span><i class="far fa-calendar"></i>Updated :</span>
+                    December 15, 2023
+                </div>
+            </li>
+        </ul>
+        <div class="buy-btn">
+            <button class="button button-enroll-course btn btn-primary">
+                Enroll Course 
+            </button>
+        </div>
+    </div>
+
+
+    <div class="course-latest">
+        <h4>Popular Courses</h4>
+        <ul class="recent-posts course-popular">
+            <li>
+                <div class="widget-post-thumb">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/course/course-sm1.jpg') }}" alt="" class="img-fluid"></a>
+                </div>
+                <div class="widget-post-body">
+                    <h6> <a href="#">South African History</a></h6>
+                    <h5>Ush.200,0000</h5>
+                </div>
+            </li>
+            <li>
+                <div class="widget-post-thumb">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/course/course-sm2.jpg') }}" alt="" class="img-fluid"></a>
+                </div>
+                <div class="widget-post-body">
+                    <h6> <a href="#">Geography of East Africa</a></h6>
+                    <h5>Ush.200,000</h5>
+                </div>
+            </li>
+            <li>
+                <div class="widget-post-thumb">
+                    <a href="#"><img src="{{ url_for('static', filename='assets/images/course/course-sm3.jpg') }}" alt="" class="img-fluid"></a>
+                </div>
+                <div class="widget-post-body">
+                    <h6> <a href="#">Digestive System In Biology</a></h6>
+                    <h5>Ush.200,000</h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- Course Sidebar end -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Course section start -->
+<section class="section-padding related-course bg-grey">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="section-heading">
+                    <h4>Other Courses Available</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-4 col-lg-4">
+                <div class="course-block">
+                    <div class="course-img">
+                        <img src="{{ url_for('static', filename='assets/images/course/course-1.jpg') }}" alt="" class="img-fluid">
+                         <div class="course-price2">Ush.200,000</div>   
+                    </div>
+                    
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-student"><i class="fa fa-user-alt"></i>15 Students</span>
+                            <span class="course-duration"><i class="far fa-file-alt"></i>30 Lessons</span>
+                            <span class="course-label">new</span>
+                        </div>
+                        
+                        <h4><a href="#">European History</a></h4>    
+                        <p>Here we teach how the history of Different  European countries such as France and Germany and others.And we learn great leaders in European History such as Napoleon, Hitler and Winston Churchhill. Lastly we learn about the world wars in europe and how they impacted the world</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4">
+                <div class="course-block">
+                    <div class="course-img">
+                        <img src="{{ url_for('static', filename='assets/images/course/course-2.jpg') }}" alt="" class="img-fluid">
+                         <div class="course-price2">Ush.200,000</div>   
+                    </div>
+                    
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-student"><i class="fa fa-user-alt"></i>40 Students</span>
+                            <span class="course-duration"><i class="far fa-file-alt"></i>20 Lessons</span>
+                        </div>
+                        
+                        <h4><a href="#">Geography Of East Africa</a></h4>     
+                        <p>Here we teach The landscape of East Africa and the people that come from East Africa. We also study the different regions and counties in East Africa. And lastly we talk about the countries in the East African Community</p>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-xl-4 col-lg-4">
+                <div class="course-block">
+                    <div class="course-img">
+                        <img src="{{ url_for('static', filename='assets/images/course/course-3.jpg') }}" alt="" class="img-fluid">
+                         <div class="course-price2">Ush.200,000</div>   
+                    </div>
+                    
+                    <div class="course-content">
+                        <div class="course-meta">
+                            <span class="course-student"><i class="fa fa-user-alt"></i>30 Students</span>
+                            <span class="course-duration"><i class="far fa-file-alt"></i>15 Lessons</span>
+                        </div>
+                        
+                        <h4><a href="#">Computer Studies</a></h4>       
+                        <p>Here we teach the basics knowledge of how to use a computer. And also teach the history of computers and different application such as microsoft application such Microsoft word, Excel,Powerpoint and Access. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Related Course section End -->
+{% endblock %}

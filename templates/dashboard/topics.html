@@ -1,0 +1,192 @@
+{% extends 'dashboard/base.html' %}
+{% block title %} Topics {% endblock %}
+{% block content %}
+
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+			
+				<!-- Page Content -->
+                <div class="content container-fluid">
+				
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row align-items-center">
+							<div class="col">
+								<h3 class="page-title">Topics</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="{{ url_for('index') }}">Dashboard</a></li>
+									<li class="breadcrumb-item active">Topics</li>
+								</ul>
+							</div>
+							<div class="col-auto float-right ml-auto">
+								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_client"><i class="fa fa-plus"></i> Add Topics</a>
+								
+							</div>
+						</div>
+					</div>
+					<!-- /Page Header -->
+								
+					{% if data|length > 0 %}
+					<div class="row">
+						<div class="col-md-12">
+							<div class="table-responsive">
+								<table class="table table-striped custom-table mb-0 datatable" >
+									<thead>
+										<tr>
+										<th>Subject Name</th>
+										<th>Class</th>
+										<th>Term</th>
+										 <th>Image</th>
+					                    <th>Description</th>
+					                    <th>Duration</th>
+					                    <th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+									{% for row in data %}
+									<tr>
+										<td>{{ row.subjects }}</td>
+										<td>{{ row.class1 }}</td>
+										<td>{{ row.term }}</td>
+										<td><img src="{{ row.img }}" style="width:100px;height:100px"> </img></td>
+										<td style="text-wrap: wrap;">
+								            {% for paragraph in row.body.split('\n') %}
+								                <p>{{ paragraph }}</p>
+								            {% endfor %}
+								        </td>
+										<td>{{ row.duration }}</td>
+										<td><a href="/dellete/{{ row.subject_id }}" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this record?')"> Delete </a><td>				
+									</tr>
+									{% endfor %}
+									</tbody>
+									<tfoot>
+	                  <tr style="color: red; font-size: smaller;">
+	                  	
+										<th>Subject Name</th>
+										<th>Class</th>
+										<th>Term</th>
+										 <th>Image</th>
+					                    <th>Description</th>
+					                    <th>Duration</th>
+					                    <th>Action</th>
+						                    </tr>
+						              	</tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					{% endif %}
+
+
+					</div>
+                </div>
+				<!-- /Page Content -->
+			
+				<!-- Add Client Modal -->
+				<div id="add_client" class="modal custom-modal fade" role="dialog">
+					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Add Topics</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form method="POST" action="" enctype="multipart/form-data">
+									<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+										<label class="text-black font-w500">Subject</label>
+										<select name="sub_id" class="form-control" required >
+											<option value="">--Please choose an option--</option>
+											{% for a in rows %}
+											<option value="{{ a.sub_id }}">{{ a.subjects }}</option>
+											{% endfor %}
+										</select>
+									</div>
+									<div class="col-md-6">
+											<div class="form-group">
+												<label class="col-form-label"> Class<span class="text-danger">*</span></label>
+												<select name="class1" class="form-control" required >
+													<option value="">--Please choose an option--</option>
+													<option value="S1">S1</option>
+													<option value="S2">S2</option>
+													<option value="S3">S3</option>
+													<option value="S4">S4</option>
+													<option value="S5">S5</option>
+													<option value="S6">S6</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="col-form-label">Term <span class="text-danger">*</span></label>
+												<select name="term" class="form-control" required >
+													<option value="">--Please choose an option--</option>
+													<option value="One">Term One</option>
+													<option value="Two">Term Two</option>
+													<option value="Three">Term Three</option>
+												</select>
+											</div>
+										</div>
+
+										</div>
+											<div class="col-sm-6">
+											<div class="form-group">
+												<label class="col-form-label">Image</label>
+												<input class="form-control" type="file" name="file" value=""  />
+											</div>
+										</div>
+
+										<div class="col-md-12">
+											<div class="form-group">
+												<label class="col-form-label">Body</label>
+											<textarea rows="4" name="body" class="form-control" required style=" height: 400px;"></textarea>
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="col-form-label">Duration <span class="text-danger">*</span></label>
+												<input type="text" class="form-control" name="duration" required>
+											</div>
+										</div>
+									</div>
+									<div class="submit-section">
+										<button class="btn btn-primary submit-btn">Submit</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Add Client Modal -->
+				
+				
+				
+							
+            </div>
+			<!-- /Page Wrapper -->
+			
+        </div>
+		<!-- /Main Wrapper -->
+		<script>
+    // JavaScript to handle Show More/Show Less functionality
+    document.querySelectorAll('.show-more-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const hiddenParagraph = this.previousElementSibling;
+            if (hiddenParagraph.classList.contains('hidden-paragraph')) {
+                hiddenParagraph.style.display = 'block';
+                this.textContent = 'Show Less';
+            } else {
+                hiddenParagraph.style.display = 'none';
+                this.textContent = 'Show More';
+            }
+        });
+    });
+</script>
+		{% endblock %}

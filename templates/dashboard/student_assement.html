@@ -1,0 +1,155 @@
+{% extends 'dashboard/base.html' %}
+{% block title %} Student's Results {% endblock %}
+{% block content %}
+
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+			
+				<!-- Page Content -->
+                <div class="content container-fluid">
+				
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row align-items-center">
+							<div class="col">
+								<h3 class="page-title">Topics</h3>
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="{{ url_for('index') }}">Dashboard</a></li>
+									<li class="breadcrumb-item active">Student's Results</li>
+								</ul>
+							</div>
+							<div class="col-auto float-right ml-auto">
+								<a href="#" class="btn add-btn" data-toggle="modal" data-target="#add_client"><i class="fa fa-plus"></i> Add Student's Results</a>
+								
+							</div>
+						</div>
+					</div>
+					<!-- /Page Header -->
+								
+					{% if data|length > 0 %}
+					<div class="row">
+						<div class="col-md-12">
+							<div class="table-responsive">
+								<table class="table table-striped custom-table mb-0 datatable" >
+									<thead>
+										<tr>
+										<th>Student Name</th>
+										<th>Term One Results</th>
+										<th>Term Two Results</th>
+										<th>Term Three Results</th>
+										<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+									{% for row in data %}
+									<tr>
+										<td>{{ row.full_name}}</td>
+										<td>{{ row.term_one}}</td>
+										<td>{{ row.term_two}}</td>
+										<td>{{ row.term_three}}</td>
+										<td><a href="/dellete/{{ row.subject_id }}" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this record?')"> Delete </a><td>				
+									</tr>
+									{% endfor %}
+									</tbody>
+									<tfoot>
+	                  <tr style="color: red; font-size: smaller;">
+	                  	
+										<th>Student Name</th>
+										<th>Term One Results</th>
+										<th>Term Two Results</th>
+										<th>Term Three Results</th>
+										<th>Action</th>
+						                    </tr>
+						              	</tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					{% endif %}
+
+
+					</div>
+                </div>
+				<!-- /Page Content -->
+			
+				<!-- Add Client Modal -->
+				<div id="add_client" class="modal custom-modal fade" role="dialog">
+					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Add Students Results</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form method="POST" action="" enctype="multipart/form-data">
+									<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+										<label class="text-black font-w500">Stsdent's Name</label>
+										<select name="students_id" class="form-control" required >
+											<option value="">--Please choose an option--</option>
+											{% for a in rows %}
+											<option value="{{ a.students_id }}">{{ a.full_name }}</option>
+											{% endfor %}
+										</select>
+									</div>
+									</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="col-form-label">Term One Results <span class="text-danger">*</span></label>
+												<input type="text" class="form-control" name="term_one" required>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="col-form-label">Term Two Results <span class="text-danger">*</span></label>
+												<input type="text" class="form-control" name="term_two" required>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="col-form-label">Term Three Results <span class="text-danger">*</span></label>
+												<input type="text" class="form-control" name="term_three" required>
+											</div>
+										</div>
+									</div>
+									<div class="submit-section">
+										<button class="btn btn-primary submit-btn">Submit</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Add Client Modal -->
+				
+				
+				
+							
+            </div>
+			<!-- /Page Wrapper -->
+			
+        </div>
+		<!-- /Main Wrapper -->
+		<script>
+    // JavaScript to handle Show More/Show Less functionality
+    document.querySelectorAll('.show-more-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const hiddenParagraph = this.previousElementSibling;
+            if (hiddenParagraph.classList.contains('hidden-paragraph')) {
+                hiddenParagraph.style.display = 'block';
+                this.textContent = 'Show Less';
+            } else {
+                hiddenParagraph.style.display = 'none';
+                this.textContent = 'Show More';
+            }
+        });
+    });
+</script>
+		{% endblock %}

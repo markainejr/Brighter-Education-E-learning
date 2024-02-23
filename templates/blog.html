@@ -1,0 +1,237 @@
+{% extends 'base.html' %} {% block title %} Blog {% endblock %} {% block content
+%}
+
+<section class="page-header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-8">
+        <div class="title-block">
+          <h1>Blog</h1>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+              <a href="#">Home</a>
+            </li>
+            <li class="list-inline-item">/</li>
+            <li class="list-inline-item">Blog</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="page-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-xl-8">
+        <article class="blog-post-item">
+          <div class="post-thumb">
+            <img
+              src="{{ url_for('static', filename='assets/images/blog/news-1.jpg') }}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="post-item mt-4">
+            <div class="post-meta">
+              <span class="post-author">Written by <a href="#">Admin</a></span>
+              <span class="post-date"
+                ><i class="fa fa-calendar-alt mr-2"></i>May 9, 2020</span
+              >
+            </div>
+            <h2 class="post-title">
+              <a href="blog-single.html"
+                >Subjects Available on Brighter E_Learning Platform!</a
+              >
+            </h2>
+            <div class="post-content">
+              <p>
+                English. Chemistry. History. Physics. Biology. Agriculture.
+                Mathemetics. And many more on the Platform.
+              </p>
+
+              <a href="blog-single.html" class="read-more"
+                >More Details <i class="fa fa-angle-right ml-2"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-post-item">
+          <div class="post-thumb">
+            <img
+              src="{{ url_for('static', filename='assets/images/blog/news-2.jpg') }}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="post-item mt-4">
+            <div class="post-meta">
+              <span class="post-author">Written by <a href="#">Admin</a></span>
+              <span class="post-date"
+                ><i class="fa fa-calendar-alt mr-2"></i>May 9, 2024</span
+              >
+            </div>
+            <h2 class="post-title">
+              <a href="blog-single.html"
+                >Explore Your Knowledge with the Updated Subject_Content in
+                2024</a
+              >
+            </h2>
+
+            <div class="post-content">
+              <p>
+                Brighter E-Learning Platform Provides You With the Updated
+                Subject_Content Every Year in any Subject in Secondary level E.g
+                physics,Geography, Chemistry, Biology, English Among Others.
+              </p>
+
+              <a href="blog-single.html" class="read-more"
+                >More Details <i class="fa fa-angle-right ml-2"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <article class="blog-post-item">
+          <div class="post-thumb">
+            <img
+              src="{{ url_for('static', filename='assets/images/blog/news-3.jpg') }}"
+              alt=""
+              class="img-fluid"
+            />
+          </div>
+          <div class="post-item mt-4">
+            <div class="post-meta">
+              <span class="post-author">Written by <a href="#">Admin</a></span>
+              <span class="post-date"
+                ><i class="fa fa-calendar-alt mr-2"></i>May 9, 2020</span
+              >
+            </div>
+            <h2 class="post-title">
+              <a href="blog-single.html"
+                >How To Study Online with Brighter E-Learning Platform</a
+              >
+            </h2>
+            <div class="post-content">
+              <p>
+                Get in touch with the Interactive videos, Downloadable Content
+                in Text Books, Interactive Quizes and Assessments. This Boosts
+                the students Knowledge of Understanding and Performance in class
+                thus improving on the Student's Excellence in Secondary Schools.
+              </p>
+
+              <a href="blog-single.html" class="read-more"
+                >More Details <i class="fa fa-angle-right ml-2"></i
+              ></a>
+            </div>
+          </div>
+        </article>
+
+        <nav class="post-navigation">
+          <ul>
+            <li class="page-num active" aria-current="page">
+              <span class="page-url">
+                1
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+            <li class="page-num"><a class="page-url" href="#">2</a></li>
+            <li class="page-num"><a class="page-url" href="#">3</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-4 col-xl-4">
+        <div class="blog-sidebar mt-5 mt-lg-0">
+          <div class="widget widget-search">
+            <form role="search" class="search-form">
+              <input type="text" class="form-control" placeholder="Search" />
+              <button type="submit" class="search-submit">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="widget widget_latest_post">
+            <h4 class="widget-title">Latest Posts</h4>
+            <ul class="recent-posts">
+              <li>
+                <div class="widget-post-thumb">
+                  <a href="#"
+                    ><img
+                      src="{{ url_for('static', filename='assets/images/blog/post-thumb-2.jpg') }}"
+                      alt=""
+                      class="img-fluid"
+                  /></a>
+                </div>
+                <div class="widget-post-body">
+                  <h6>
+                    <a href="#"
+                      >Study From Where you are with Brighter Education</a
+                    >
+                  </h6>
+                  <span>10 april 2023</span>
+                </div>
+              </li>
+              <li>
+                <div class="widget-post-thumb">
+                  <a href="#"
+                    ><img
+                      src="{{ url_for('static', filename='assets/images/blog/post-thumb-3.jpg') }}"
+                      alt=""
+                      class="img-fluid"
+                  /></a>
+                </div>
+                <div class="widget-post-body">
+                  <h6>
+                    <a href="#">Get to know to the trending technologies</a>
+                  </h6>
+                  <span>10 March 2024</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="widget widget_categories">
+            <h4 class="widget-title">Categories</h4>
+            <ul>
+              <li class="cat-item">
+                <a href="#"><i class="fa fa-angle-right"></i>English</a>(4)
+              </li>
+              <li class="cat-item">
+                <a href="#"><i class="fa fa-angle-right"></i>Entreprenueship</a
+                >(14)
+              </li>
+              <li class="cat-item">
+                <a href="#"><i class="fa fa-angle-right"></i>Geography</a>(24)
+              </li>
+              <li class="cat-item">
+                <a href="#"
+                  ><i class="fa fa-angle-right"></i>History &amp; dev</a
+                >(6)
+              </li>
+            </ul>
+          </div>
+
+          <div class="widget widget_tag_cloud">
+            <h4 class="widget-title">Tags</h4>
+            <a href="#">Design</a>
+            <a href="#">Development</a>
+            <a href="#">UX</a>
+            <a href="#">Marketing</a>
+            <a href="#">Tips</a>
+            <a href="#">Tricks</a>
+            <a href="#">Ui</a>
+            <a href="#">Free</a>
+            <a href="#">Wordpress</a>
+            <a href="#">bootstrap</a>
+            <a href="#">Tutorial</a>
+            <a href="#">Html</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
